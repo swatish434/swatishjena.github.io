@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swatish Jena - Data Science & AI Researcher</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        /* Navigation */
+        nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: #667eea;
+            color: white;
+        }
+
+        /* Sections */
+        section {
+            padding: 4rem 0;
+            margin: 2rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            margin-bottom: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* About Section */
+        .about-content {
+            text-align: center;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Education */
+        .education-item {
+            border-left: 3px solid #667eea;
+            padding-left: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 13px;
+            height: 13px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .education-degree {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-school {
+            font-size: 1.1rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .education-details {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Experience */
+        .experience-item {
+            margin-bottom: 2.5rem;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .experience-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 500;
+        }
+
+        .experience-date {
+            color: #666;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        .experience-description {
+            margin-top: 1rem;
+        }
+
+        .experience-description ul {
+            padding-left: 1.5rem;
+        }
+
+        .experience-description li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Projects */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .project-date {
+            color: #667eea;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-tools {
+            background: #f8f9fa;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: #666;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .project-description ul {
+            padding-left: 1.5rem;
+        }
+
+        .project-description li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .skill-category {
+            text-align: center;
+        }
+
+        .skill-icon {
+            font-size: 3rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .skill-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .skill-list {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .cert-icon {
+            font-size: 2rem;
+            color: #667eea;
+        }
+
+        .cert-details h4 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-details p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .experience-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="profile-img">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1>Swatish Jena</h1>
+            <p class="subtitle">Data Science & AI Researcher</p>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+91-6371887361</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>swatish21@iiserb.ac.in</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Bhopal, MP - 462066, India</span>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a href="#" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                <a href="#" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>I am an Undergraduate Research Student pursuing a BS-MS degree in Data Science and Engineering at IISER Bhopal. With a passion for applying machine learning and artificial intelligence to solve real-world problems, I am actively seeking internship opportunities as a Data Scientist, Machine Learning Engineer, or AI Engineer.</p>
+                <br>
+                <p>My research interests span across change detection in remote sensing imagery, computer vision, and deep learning applications in agriculture and healthcare. I am looking forward to collaborating with industries to apply my data science knowledge and make meaningful contributions to innovative projects.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="card">
+                <div class="education-item">
+                    <div class="education-degree">BS-MS (Bachelor Of Science and Master Of Science)</div>
+                    <div class="education-school">Indian Institute Of Science Education and Research (IISER), Bhopal</div>
+                    <div class="education-details">Dec 2021 - Present | CPI: 6.41/10</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-degree">Higher Secondary Education (CHSE)</div>
+                    <div class="education-school">Jupiter Science Higher Secondary School, Bhubaneswar</div>
+                    <div class="education-details">Apr 2020 - Mar 2021 | 72.83%</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="education-degree">Secondary Education (BSE)</div>
+                    <div class="education-school">Balukeswar Dev High School, Puri</div>
+                    <div class="education-details">Apr 2018 - Mar 2019 | 72.33%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+
+            <div class="card">
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Summer Research Intern</div>
+                            <div class="experience-company">ASIP Lab, IISER Bhopal</div>
+                            <div style="color: #666; font-size: 0.9rem;">Supervisor: Dr. Samiran Das</div>
+                        </div>
+                        <div class="experience-date">May 2025 - July 2025</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Assisted in data preprocessing and exploratory analysis of remote sensing datasets for change detection using deep learning</li>
+                            <li>Supported development of predictive models with CNNs and Mamba models for image classification and environmental pattern interpretation specifically for mining sites</li>
+                            <li>Collaborated on documentation and feedback for model improvement, deriving actionable insights from complex satellite imagery</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Summer Research Intern</div>
+                            <div class="experience-company">CCMD Lab, IISER Bhopal</div>
+                            <div style="color: #666; font-size: 0.9rem;">Supervisor: Dr. Sai Phani Kumar Vangala</div>
+                        </div>
+                        <div class="experience-date">May 2024 - July 2024</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Performed data cleaning and preparation of polymer-solvent interaction datasets for ML modeling</li>
+                            <li>Implemented regression models (e.g., Gaussian Process, Gradient Boosting) to predict interaction parameters (Chi value)</li>
+                            <li>Conducted statistical analysis and feature engineering to uncover relationships between variables like temperature and PDI</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="experience-item">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">Project Intern</div>
+                            <div class="experience-company">IIT Kharagpur</div>
+                            <div style="color: #666; font-size: 0.9rem;">Supervisor: Dr. Rajendra Machhavaram</div>
+                        </div>
+                        <div class="experience-date">Dec 2023 - Jan 2024</div>
+                    </div>
+                    <div class="experience-description">
+                        <ul>
+                            <li>Assisted in Data Collection and Preprocessing of Capsicum Samples</li>
+                            <li>The project focused on developing a segmented model for automated capsicum peduncle detection in night-time greenhouse environments</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-title">Machine Learning Applied To Polymer Informatics</div>
+                    <div class="project-date">May 2024 - July 2024</div>
+                    <div class="project-tools">Python, XGBoost, Scikit-learn, Pandas, Polymer-Solvent Database</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Built and queried structured datasets of polymer-solvent pairs using SQL; applied data wrangling with Pandas for EDA and preprocessing</li>
+                            <li>Developed and tuned ML regression models (Gaussian Process, Random Forest) for time series forecasting of interaction parameters</li>
+                            <li>Derived business-relevant insights through clustering and visualization (Matplotlib, Seaborn), achieving high predictive accuracy via cross-validation</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Chest X-ray Abnormalities Detection Using Computer Vision</div>
+                    <div class="project-date">Dec 2023</div>
+                    <div class="project-tools">Python, TensorFlow, Keras, OpenCV</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Preprocessed medical imaging data with normalization and augmentation; implemented CNNs for classification and anomaly detection</li>
+                            <li>Performed exploratory data analysis to identify patterns in X-ray abnormalities, supporting predictive modeling for healthcare insights</li>
+                            <li>Optimized models with hyperparameter tuning, focusing on interpretability for non-technical stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-title">Automated Weed Detection Using Computer Vision</div>
+                    <div class="project-date">Aug 2024</div>
+                    <div class="project-tools">Python, TensorFlow, OpenCV, CNN</div>
+                    <div class="project-description">
+                        <ul>
+                            <li>Analyzed large-scale RGB image dataset (17,509 images) with data cleaning and preparation techniques</li>
+                            <li>Built deep learning models for real-time classification, applying statistical methods for accuracy evaluation</li>
+                            <li>Generated visualizations and insights to simulate optimization scenarios for agricultural applications</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <div class="skill-title">Programming</div>
+                    <div class="skill-list">Python, R, C, SQL, MATLAB</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="skill-title">ML/AI</div>
+                    <div class="skill-list">Machine Learning, Deep Learning, Computer Vision</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="skill-title">Tools</div>
+                    <div class="skill-list">Docker, TensorFlow, Keras, OpenCV, Scikit-learn</div>
+                </div>
+
+                <div class="skill-category">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="skill-title">Analytics</div>
+                    <div class="skill-list">Statistical Methods, Data Visualization, EDA, Problem-Solving</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Conferences</h2>
+            <div class="card">
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Foundational Degree in Data Science</h4>
+                        <p>IIT Madras - May 2024</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-presentation"></i>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Conference Presentation - APA 2024</h4>
+                        <p>Presented "Application of ML Models to Understand Polymer-Solvent Interaction" at APA 2024, Jaipur</p>
+                    </div>
+                </div>
+
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-poster"></i>
+                    </div>
+                    <div class="cert-details">
+                        <h4>Poster Presentation</h4>
+                        <p>Presented poster on deep learning applications at Engineer's Day event, IISER Bhopal</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem;">
+                <h3 style="margin-bottom: 1rem; color: #333;">Languages</h3>
+                <p style="color: #666; line-height: 1.8;">English, Hindi, Odia, Spanish</p>
+
+                <h3 style="margin: 2rem 0 1rem 0; color: #333;">Research Interests</h3>
+                <p style="color: #666; line-height: 1.8;">AI/ML in Advertising, Data-Driven Decision Making, Predictive Analytics, Statistical Modeling, Change Detection in Remote Sensing</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Swatish Jena. All rights reserved.</p>
+            <p>Built with passion for Data Science and AI Research</p>
+        </div>
+    </footer>
+
+    <!-- Smooth scrolling JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add active class to nav links on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section');
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
